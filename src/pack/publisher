@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+
+import rospy
+import cv2
+from sensor_msgs.msg import Image
+from cv_bridge import CvBridge, CvBridgeError
+
+class CameraPublisher:
+
+    def __init__(self):
+
+        rospy.init_node('camera_publisher', anonymous=True)
+        self.pub = rospy.Publisher('image_topic', Image, queue_size=10)
+        self.bridge = CvBridge()
+        self.camera = cv2.VideoCapture(0)
+        
+
+    def run(self):
+        while not rospy.is_shutdown():
+            ret, frame = self.camera.read()
+            if ret:
+                try:
+                    img_msg = self.bridge.cv2_to_imgmsg(frame, 'bgr8')
+                    self.pub.publish(img_msg)
+
+                except CvBridgeError as e:
+                    print(e)
+
+if __name__ == '__main__':
+    try:
+        publisher = CameraPublisher()
+        publisher.run()
+
+    except rospy.ROSInterruptException:
+        pass
+

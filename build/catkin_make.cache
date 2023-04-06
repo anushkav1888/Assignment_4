@@ -1,0 +1,2 @@
+pack
+-DCATKIN_DEVEL_PREFIX=/home/anushka/induction/devel -DCMAKE_INSTALL_PREFIX=/home/anushka/induction/install -G Unix Makefiles
