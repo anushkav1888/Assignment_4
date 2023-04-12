@@ -7,8 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/anushka/induction/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/anushka/induction/devel/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH='/opt/ros/noetic/lib'
+export PKG_CONFIG_PATH='/opt/ros/noetic/lib/pkgconfig'
 export PWD='/home/anushka/induction/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/anushka/induction/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/anushka/induction/src:$ROS_PACKAGE_PATH"

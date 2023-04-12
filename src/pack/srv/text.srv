@@ -1,4 +1,0 @@
-sensor_msgs/Image imgs
----
-std_msgs/Float64MultiArray a=50
-std_msgs/Float64MultiArray ids=[51,52,53]
